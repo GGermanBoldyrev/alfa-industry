@@ -1,0 +1,36 @@
+/*Основные цвета*/
+$white: #FFFFFF;
+$white-darker: #F3F4F6;
+$main-blue: #1A54C9;
+$black: #222222;
+$black-lighter: #26262B;
+$gray: #75787E;
+$gray-lighter: #9498a0;
+
+/*Шрифты*/
+$font-family-base: 'Montserrat', sans-serif;
+$font-size-decreased-2: 12px;
+$font-size-base: 14px;
+$font-size-increased-2: 16px;
+$font-size-increased-4: 18px;
+$font-size-increased-6: 20px;
+$font-size-increased-8: 22px;
+
+/*Переменные для tailwind*/
+:root {
+    --white: #{$white};
+    --white-darker: #{$white-darker};
+    --main-blue: #{$main-blue};
+    --black: #{$black};
+    --black-lighter: #{$black-lighter};
+    --gray: #{$gray};
+    --gray-lighter: #{$gray-lighter};
+
+    --font-family-base: #{$font-family-base};
+    --font-size-decreased-2: #{$font-size-decreased-2};
+    --font-size-base: #{$font-size-base};
+    --font-size-increased-2: #{$font-size-increased-2};
+    --font-size-increased-4: #{$font-size-increased-4};
+    --font-size-increased-6: #{$font-size-increased-6};
+    --font-size-increased-8: #{$font-size-increased-8};
+}

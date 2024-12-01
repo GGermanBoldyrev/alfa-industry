@@ -4,15 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-@include('components.large.navbar')
+<header>
+    <div class="container mx-auto p-4">
+        @include('components.large.navbar')
+    </div>
+</header>
 
 <main>
-    @yield('content')
+    <div class="container mx-auto p-4">
+        @yield('content')
+    </div>
 </main>
 
-@include('components.large.footer')
+<footer>
+    <div class="container mx-auto p-4">
+        @include('components.large.footer')
+    </div>
+</footer>
 </body>
 </html>
