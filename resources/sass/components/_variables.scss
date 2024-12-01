@@ -18,19 +18,19 @@ $font-size-increased-8: 22px;
 
 /*Переменные для tailwind*/
 :root {
-    --white: #{$white};
-    --white-darker: #{$white-darker};
-    --main-blue: #{$main-blue};
-    --black: #{$black};
-    --black-lighter: #{$black-lighter};
-    --gray: #{$gray};
-    --gray-lighter: #{$gray-lighter};
+  --white: #{$white};
+  --white-darker: #{$white-darker};
+  --main-blue: #{$main-blue};
+  --black: #{$black};
+  --black-lighter: #{$black-lighter};
+  --gray: #{$gray};
+  --gray-lighter: #{$gray-lighter};
 
-    --font-family-base: #{$font-family-base};
-    --font-size-decreased-2: #{$font-size-decreased-2};
-    --font-size-base: #{$font-size-base};
-    --font-size-increased-2: #{$font-size-increased-2};
-    --font-size-increased-4: #{$font-size-increased-4};
-    --font-size-increased-6: #{$font-size-increased-6};
-    --font-size-increased-8: #{$font-size-increased-8};
+  --font-family-base: #{$font-family-base};
+  --font-size-decreased-2: #{$font-size-decreased-2};
+  --font-size-base: #{$font-size-base};
+  --font-size-increased-2: #{$font-size-increased-2};
+  --font-size-increased-4: #{$font-size-increased-4};
+  --font-size-increased-6: #{$font-size-increased-6};
+  --font-size-increased-8: #{$font-size-increased-8};
 }

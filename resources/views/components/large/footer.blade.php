@@ -4,8 +4,7 @@
             <a href="{{ route('home') }}"><h3>{{ request()->getHost() }}</h3></a>
         </nav>
         <div class="w-80 text-grayLighter">
-            @php($slogan = App\Models\Slogan::where('is_active', true)->first())
-            {{ $slogan->name ?? 'Поставки промышленного оборудования мировых брендов' }}
+            {{ $slogan ?? 'Поставки промышленного оборудования мировых брендов' }}
         </div>
     </div>
     <div>
@@ -33,22 +32,20 @@
     <div>
         <h3>Наши контакты</h3>
         <nav class="w-80">
-            @php($contactTypes = App\Models\ContactType::where('is_active', true)->get())
-            @forelse ($contactTypes as $contactType)
+            @forelse ($activeContactsGroupedByType as $type => $contacts)
                 <ul class="mb-6">
-                    @php($contacts = App\Models\Contact::where(['contact_type_id' => $contactType->id, 'is_active' => true])->get())
                     @foreach($contacts as $contact)
                         <li>
-                        @if ($contact->contactType->name === 'Email')
-                            <a href="mailto:{{ $contact->value }}" target="_blank">{{ $contact->value }}</a>
-                        @elseif ($contact->contactType->name === 'Номер телефона')
-                            <a href="tel:+{{ str_replace([' ', '(', ')', '-'], '', $contact->value) }}" target="_blank">{{ $contact->value }}</a>
-                        @elseif ($contact->contactType->name === 'Адрес')
-                            @php($mapUrl = app(App\Services\YandexMapsService::class)->generateUrl($contact->value))
-                            <a href="{{ $mapUrl }}" target="_blank">{{ $contact->value }}</a>
-                        @else
-                            {{ $contact->value }}
-                        @endif
+                            @if ($type === 'Email')
+                                <a href="mailto:{{ $contact->value }}" target="_blank">{{ $contact->value }}</a>
+                            @elseif ($type === 'Номер телефона')
+                                <a href="tel:+{{ str_replace([' ', '(', ')', '-'], '', $contact->value) }}" target="_blank">{{ $contact->value }}</a>
+                            @elseif ($type === 'Адрес')
+                                @php($mapUrl = app(App\Services\YandexMapsService::class)->generateUrl($contact->value))
+                                <a href="{{ $mapUrl }}" target="_blank">{{ $contact->value }}</a>
+                            @else
+                                {{ $contact->value }}
+                            @endif
                         </li>
                     @endforeach
                 </ul>
