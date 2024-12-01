@@ -13,13 +13,13 @@
 </header>
 
 <main>
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-4 mt-10">
         @yield('content')
     </div>
 </main>
 
 <footer>
-    <div class="container mx-auto p-4">
+    <div class="container mx-auto p-4 mt-48">
         @include('components.large.footer')
     </div>
 </footer>
