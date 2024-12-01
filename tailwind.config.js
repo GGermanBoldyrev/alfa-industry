@@ -11,8 +11,25 @@ export default {
     ],
     theme: {
         extend: {
+            colors: {
+                white: "var(--white)",
+                whiteDarker: "var(--white-darker)",
+                mainBlue: "var(--main-blue)",
+                black: "var(--black)",
+                blackLighter: "var(--black-lighter)",
+                gray: "var(--gray)",
+                grayLighter: "var(--gray-lighter)",
+            },
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                base: "var(--font-family-base)",
+            },
+            fontSize: {
+                decreased2: "var(--font-size-decreased-2)",
+                base: "var(--font-size-base)",
+                increased2: "var(--font-size-increased-2)",
+                increased4: "var(--font-size-increased-4)",
+                increased6: "var(--font-size-increased-6)",
+                increased8: "var(--font-size-increased-8)",
             },
         },
     },

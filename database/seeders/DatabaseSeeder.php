@@ -19,5 +19,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Запуск базовых seeder
+        $this->call([
+            SloganSeeder::class,
+            ContactTypeSeeder::class,
+            ContactSeeder::class,
+        ]);
     }
 }
