@@ -1,0 +1,59 @@
+@import "variables";
+
+$primary-color: $main-blue; // Основной цвет
+$primary-hover-color: darken($primary-color, 10%); // Цвет при наведении
+$secondary-color: #6c757d; // Вторичный цвет
+$secondary-hover-color: darken($secondary-color, 10%);
+$border-color: #ced4da; // Цвет границы
+$border-hover-color: darken($border-color, 10%);
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid $border-color;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        border-color: $border-hover-color;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    &.btn-primary {
+        background-color: $primary-color;
+        color: #fff;
+        border-color: $primary-color;
+        &:hover {
+            background-color: $primary-hover-color;
+            border-color: $primary-hover-color;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: $secondary-color;
+        color: #fff;
+        border-color: $secondary-color;
+        &:hover {
+            background-color: $secondary-hover-color;
+            border-color: $secondary-hover-color;
+        }
+    }
+
+    &.btn-sm {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    &.btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.2rem;
+    }
+}

@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title')</title>
+    <title>Alfa Industry. @yield('title')</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/main/logoSimple.png') }}">
     @vite(['resources/css/app.css', 'resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
 <header>
-    <div class="container mx-auto p-4">
-        @include('components.large.navbar')
-    </div>
+    @include('components.large.header')
 </header>
 
 <main>
