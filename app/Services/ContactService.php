@@ -2,28 +2,24 @@
 
 namespace App\Services;
 
-use App\Models\Contact;
-use App\Models\ContactType;
-use Illuminate\Support\Facades\Cache;
+use App\Contracts\ContactServiceInterface;
+use App\Repositories\ContactRepository;
+use Illuminate\Support\Collection;
 
-class ContactService
+class ContactService implements ContactServiceInterface
 {
-    public function getActiveContactsGroupedByType()
-    {
-        return Cache::remember('contacts_grouped_by_type', now()->addMinute(), function () {
-            $contacts = Contact::where('is_active', true)
-                ->with('contactType')
-                ->get()
-                ->groupBy('contact_type_id');
+    private ContactRepository $contactRepository;
 
-            $groupedContacts = [];
-            foreach ($contacts as $typeId => $contactList) {
-                $contactType = ContactType::find($typeId);
-                if ($contactType && $contactType->is_active) {
-                    $groupedContacts[$contactType->name] = $contactList;
-                }
-            }
-            return $groupedContacts;
+    public function __construct(ContactRepository $contactRepository)
+    {
+        $this->contactRepository = $contactRepository;
+    }
+
+    public function getActiveContactsGroupedByType(): Collection
+    {
+        $contacts = $this->contactRepository->getActiveContacts();
+        return $contacts->groupBy(function ($contact) {
+            return $contact->contactType->name;
         });
     }
 }
