@@ -2,6 +2,7 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    App\Providers\ContactComposerProvider::class,
-    App\Providers\SloganComposerProvider::class,
+    App\Providers\ContactServiceProvider::class,
+    App\Providers\SloganServiceProvider::class,
+    App\Providers\ViewServiceProvider::class,
 ];

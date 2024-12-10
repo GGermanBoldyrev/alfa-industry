@@ -10,9 +10,9 @@
 
     <nav>
         <ul class="space-y-1">
-            @forelse($activeContactsGroupedByType as $activeType => $activeContacts)
+            @forelse($activeContacts as $activeType => $contact)
                 @if($activeType === 'Номер телефона')
-                    @foreach($activeContacts as $activeContact)
+                    @foreach($contact as $activeContact)
                         <li class="w-fit">
                             <a href="tel:+{{ str_replace([' ', '(', ')', '-'], '', $activeContact->value) }}">
                                 <div class="flex items-center">
@@ -23,7 +23,7 @@
                         </li>
                     @endforeach
                 @elseif($activeType === 'Email')
-                    @foreach($activeContacts as $activeContact)
+                    @foreach($contact as $activeContact)
                         <li class="w-fit">
                             <a href="mailto:{{ $activeContact->value }}" target="_blank">
                                 <div class="flex items-center">

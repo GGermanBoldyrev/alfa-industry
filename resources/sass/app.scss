@@ -23,6 +23,10 @@ h6 {
   font-size: $font-size-increased-2;
 }
 
+a:hover {
+    cursor: pointer;
+}
+
 body {
   font-family: $font-family-base;
   font-size: $font-size-base;
@@ -58,7 +62,7 @@ footer {
     color: $main-blue;
     border-bottom: 2px solid $main-blue;
 
-    :hover {
+    &:hover {
       transition: 0.2s;
       color: $black;
     }

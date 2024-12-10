@@ -32,20 +32,11 @@
     <div>
         <h3>Наши контакты</h3>
         <nav class="w-80">
-            @forelse ($activeContactsGroupedByType as $type => $contacts)
+            @forelse ($activeContacts as $type => $contacts)
                 <ul class="mb-6">
-                    @foreach($contacts as $contact)
+                    @foreach ($contacts as $contact)
                         <li>
-                            @if ($type === 'Email')
-                                <a href="mailto:{{ $contact->value }}" target="_blank">{{ $contact->value }}</a>
-                            @elseif ($type === 'Номер телефона')
-                                <a href="tel:+{{ str_replace([' ', '(', ')', '-'], '', $contact->value) }}" target="_blank">{{ $contact->value }}</a>
-                            @elseif ($type === 'Адрес')
-                                @php($mapUrl = app(App\Services\YandexMapsService::class)->generateUrl($contact->value))
-                                <a href="{{ $mapUrl }}" target="_blank">{{ $contact->value }}</a>
-                            @else
-                                {{ $contact->value }}
-                            @endif
+                            <x-contact-link :type="$type" :value="$contact->value" />
                         </li>
                     @endforeach
                 </ul>

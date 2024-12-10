@@ -17,9 +17,8 @@ class ContactService implements ContactServiceInterface
 
     public function getActiveContactsGroupedByType(): Collection
     {
-        $contacts = $this->contactRepository->getActiveContacts();
-        return $contacts->groupBy(function ($contact) {
-            return $contact->contactType->name;
-        });
+        return $this->contactRepository
+            ->getActiveContacts()
+            ->groupBy(fn($contact) => $contact->contactType->name);
     }
 }

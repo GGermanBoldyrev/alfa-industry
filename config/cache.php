@@ -105,4 +105,17 @@ return [
 
     'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Custom Cache Key
+    |--------------------------------------------------------------------------
+    |
+    | My custom cache keys
+    |
+    */
+
+    'contacts' => [
+        'ttl' => 60, // Время жизни кеша в минутах
+        'key' => 'active_contacts_grouped_by_type', // Уникальный ключ кеша
+    ],
 ];

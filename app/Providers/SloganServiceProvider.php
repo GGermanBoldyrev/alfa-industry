@@ -6,7 +6,7 @@ use App\Services\SloganService;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
-class SloganComposerProvider extends ServiceProvider
+class SloganServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
