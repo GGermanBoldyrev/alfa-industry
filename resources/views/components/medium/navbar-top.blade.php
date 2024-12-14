@@ -5,32 +5,16 @@
         </a>
     </nav>
     <div class="w-80 text-center">
-        {{ $active_slogan ?? 'Поставки промышленного оборудования мировых брендов' }}
+        {{ $activeSloganName ?? 'Поставки промышленного оборудования мировых брендов' }}
     </div>
 
     <nav>
         <ul class="space-y-1">
             @forelse($activeContacts as $activeType => $contact)
-                @if($activeType === 'Номер телефона')
+                @if(in_array($activeType, ['Номер телефона', 'Email']))
                     @foreach($contact as $activeContact)
                         <li class="w-fit">
-                            <a href="tel:+{{ str_replace([' ', '(', ')', '-'], '', $activeContact->value) }}">
-                                <div class="flex items-center">
-                                    <img src="{{ asset('icons/phone.svg') }}" alt="Телефон" class="w-4">
-                                    <div class="ml-2">{{ $activeContact->value }}</div>
-                                </div>
-                            </a>
-                        </li>
-                    @endforeach
-                @elseif($activeType === 'Email')
-                    @foreach($contact as $activeContact)
-                        <li class="w-fit">
-                            <a href="mailto:{{ $activeContact->value }}" target="_blank">
-                                <div class="flex items-center">
-                                    <img src="{{ asset('icons/mail.svg') }}" alt="mail" class="w-4">
-                                    <div class="ml-2">{{ $activeContact->value }}</div>
-                                </div>
-                            </a>
+                            <x-navbar-contact :type="$activeType" :value="$activeContact->value" />
                         </li>
                     @endforeach
                 @endif

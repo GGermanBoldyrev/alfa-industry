@@ -17,13 +17,13 @@ class CacheSloganServiceDecorator implements SloganServiceInterface
     )
     {
         $this->cacheTtl = $cacheTtl ?? config('cache.slogan.ttl', 60);
-        $this->cacheKey = $cacheKey ?? config('cache.slogan.key', 'active_slogan');
+        $this->cacheKey = $cacheKey ?? config('cache.slogan.key', 'active_slogan_name');
     }
 
-    public function getActiveSlogan(): ?string
+    public function getActiveSloganName(): ?string
     {
-        return Cache::remember($this->cacheKey, $this->cacheTtl, function () {
-            return $this->sloganService->getActiveSlogan();
+        return Cache::remember($this->cacheKey, now()->addMinutes($this->cacheTtl), function () {
+            return $this->sloganService->getActiveSloganName();
         });
     }
 

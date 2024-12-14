@@ -36,7 +36,7 @@ class SloganServiceProvider extends ServiceProvider
         View::composer(
             ['components.large.footer', 'components.medium.navbar-top'],
             function ($view) use ($sloganService) {
-                $view->with('slogan', $sloganService->getActiveSlogan());
+                $view->with('activeSloganName', $sloganService->getActiveSloganName());
             });
     }
 }

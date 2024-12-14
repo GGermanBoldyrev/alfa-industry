@@ -23,7 +23,7 @@ class CacheContactServiceDecorator implements ContactServiceInterface
 
     public function getActiveContactsGroupedByType(): Collection
     {
-        return Cache::remember($this->cacheKey,  $this->cacheTtl, function () {
+        return Cache::remember($this->cacheKey, now()->addMinutes($this->cacheTtl), function () {
             return $this->contactService->getActiveContactsGroupedByType();
         });
     }

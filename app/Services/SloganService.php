@@ -11,7 +11,7 @@ class SloganService implements SloganServiceInterface
         private readonly SloganRepositoryInterface $sloganRepository
     ) {}
 
-    public function getActiveSlogan(): ?string
+    public function getActiveSloganName(): ?string
     {
         return $this->sloganRepository->getActiveSlogan()?->name;
     }
