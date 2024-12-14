@@ -4,7 +4,6 @@ namespace App\Services;
 
 use App\Contracts\Repositories\ContactRepositoryInterface;
 use App\Contracts\Services\ContactServiceInterface;
-use App\Repositories\ContactRepository;
 use Illuminate\Support\Collection;
 
 class ContactService implements ContactServiceInterface

@@ -4,7 +4,7 @@
             <a href="{{ route('home') }}"><h3>{{ request()->getHost() }}</h3></a>
         </nav>
         <div class="w-80 text-grayLighter">
-            {{ $slogan ?? 'Поставки промышленного оборудования мировых брендов' }}
+            {{ $active_slogan ?? 'Поставки промышленного оборудования мировых брендов' }}
         </div>
     </div>
     <div>
