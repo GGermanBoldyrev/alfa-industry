@@ -2,7 +2,8 @@
 
 namespace App\Providers;
 
-use App\Contracts\ContactServiceInterface;
+use App\Contracts\Repositories\ContactRepositoryInterface;
+use App\Contracts\Services\ContactServiceInterface;
 use App\Repositories\ContactRepository;
 use App\Services\ContactService;
 use App\Services\Decorators\CacheContactServiceDecorator;
@@ -16,11 +17,14 @@ class ContactServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ContactServiceInterface::class, function ($app) {
-            $repository = $app->make(ContactRepository::class);
-            $baseService = new ContactService($repository);
+        // Регистрация репозитория
+        $this->app->singleton(ContactRepositoryInterface::class, ContactRepository::class);
 
-            return new CacheContactServiceDecorator($baseService);
+        // Базовый сервис
+        $this->app->bind(ContactServiceInterface::class, function ($app) {
+            $repository = $app->make(ContactRepositoryInterface::class);
+            // Оборачиваем в декоратор
+            return new CacheContactServiceDecorator(new ContactService($repository));
         });
     }
 
@@ -30,10 +34,7 @@ class ContactServiceProvider extends ServiceProvider
     public function boot(ContactServiceInterface $contactService): void
     {
         View::composer(
-            [
-                'components.large.footer',
-                'components.medium.navbar-top',
-            ],
+            ['components.large.footer', 'components.medium.navbar-top'],
             function ($view) use ($contactService) {
                 $view->with('activeContacts', $contactService->getActiveContactsGroupedByType());
             });

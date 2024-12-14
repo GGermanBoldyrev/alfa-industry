@@ -2,7 +2,7 @@
 
 namespace App\Services\Decorators;
 
-use App\Contracts\ContactServiceInterface;
+use App\Contracts\Services\ContactServiceInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 
@@ -23,18 +23,13 @@ class CacheContactServiceDecorator implements ContactServiceInterface
 
     public function getActiveContactsGroupedByType(): Collection
     {
-        return Cache::remember($this->getCacheKey(),  $this->cacheTtl, function () {
+        return Cache::remember($this->cacheKey,  $this->cacheTtl, function () {
             return $this->contactService->getActiveContactsGroupedByType();
         });
     }
 
     public function clearCache(): void
     {
-        Cache::forget($this->getCacheKey());
-    }
-
-    private function getCacheKey(): string
-    {
-        return sprintf('%s:%s', $this->cacheKey, app()->getLocale());
+        Cache::forget($this->cacheKey);
     }
 }

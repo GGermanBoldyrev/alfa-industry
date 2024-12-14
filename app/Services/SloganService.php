@@ -2,15 +2,17 @@
 
 namespace App\Services;
 
-use App\Models\Slogan;
-use Illuminate\Support\Facades\Cache;
+use App\Contracts\Repositories\SloganRepositoryInterface;
+use App\Contracts\Services\SloganServiceInterface;
 
-class SloganService
+class SloganService implements SloganServiceInterface
 {
+    public function __construct(
+        private readonly SloganRepositoryInterface $sloganRepository
+    ) {}
+
     public function getActiveSlogan(): ?string
     {
-        return Cache::remember('slogan', now()->addMinute(), function () {
-            return Slogan::where('is_active', true)->first()?->name;
-        });
+        return $this->sloganRepository->getActiveSlogan()?->name;
     }
 }

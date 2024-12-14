@@ -2,18 +2,16 @@
 
 namespace App\Services;
 
-use App\Contracts\ContactServiceInterface;
+use App\Contracts\Repositories\ContactRepositoryInterface;
+use App\Contracts\Services\ContactServiceInterface;
 use App\Repositories\ContactRepository;
 use Illuminate\Support\Collection;
 
 class ContactService implements ContactServiceInterface
 {
-    private ContactRepository $contactRepository;
-
-    public function __construct(ContactRepository $contactRepository)
-    {
-        $this->contactRepository = $contactRepository;
-    }
+    public function __construct(
+        private readonly ContactRepositoryInterface $contactRepository
+    ) {}
 
     public function getActiveContactsGroupedByType(): Collection
     {

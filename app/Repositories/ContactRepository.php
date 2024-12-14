@@ -2,10 +2,11 @@
 
 namespace App\Repositories;
 
+use App\Contracts\Repositories\ContactRepositoryInterface;
 use App\Models\Contact;
 use Illuminate\Support\Collection;
 
-class ContactRepository
+class ContactRepository implements ContactRepositoryInterface
 {
     public function getActiveContacts(): Collection
     {
