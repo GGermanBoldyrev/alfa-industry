@@ -5,31 +5,21 @@
         комплектующих с Европы и стран ближнего Востока. При поступлении Вашей заявки, заказ сразу же попадает в работу,
         а наши поставщики обеспечивают минимальные сроки доставки по всей России.
     </x-highlight-box>
+
     <h3 class="text-center my-12">Наши преимущества</h3>
     <ul class="flex justify-center items-center">
         <div class="w-8/12 space-y-10">
             <div class="flex justify-between items-center">
-                <li class="flex flex-col justify-center items-center w-48">
-                    <img src="{{ asset('icons/global.svg') }}" alt="Глобус" class="w-16">
-                    <div class="mt-3">Широкий ассортимент</div>
-                </li>
-                <li class="flex flex-col justify-center items-center w-48">
-                    <img src="{{ asset('icons/user.svg') }}" alt="Пользователь" class="w-16">
-                    <div class="mt-3">Индивидуальный подход</div>
-                </li>
+                <x-home.advantage-item icon="global.svg" title="Широкий ассортимент" />
+                <x-home.advantage-item icon="user.svg" title="Индивидуальный подход" />
             </div>
             <div class="flex justify-between items-center">
-                <li class="flex flex-col justify-center items-center w-48">
-                    <img src="{{ asset('icons/truck.svg') }}" alt="Машина" class="w-16">
-                    <div class="mt-3">Оперативная доставка</div>
-                </li>
-                <li class="flex flex-col justify-center items-center w-48">
-                    <img src="{{ asset('icons/dollar.svg') }}" alt="Доллар" class="w-16">
-                    <div class="mt-3">Конкурентные цены</div>
-                </li>
+                <x-home.advantage-item icon="truck.svg" title="Оперативная доставка" />
+                <x-home.advantage-item icon="dollar.svg" title="Конкурентные цены" />
             </div>
         </div>
     </ul>
+
     <div class="mt-16 text-right">
         <x-small.button-link
             class="btn-primary-outlined btn-xs"

@@ -24,6 +24,7 @@ h6 {
 }
 
 a:hover {
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
 }
 
@@ -50,7 +51,6 @@ footer {
   }
 
   a:hover {
-    transition: 0.2s;
     color: $gray-lighter;
   }
 }
@@ -63,7 +63,6 @@ footer {
     border-bottom: 2px solid $main-blue;
 
     &:hover {
-      transition: 0.2s;
       color: $black;
     }
   }

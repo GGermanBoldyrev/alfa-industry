@@ -1,7 +1,7 @@
 @import "variables";
 
 $primary-color: $main-blue; // Основной цвет
-$primary-hover-color: darken($primary-color, 10%); // Цвет при наведении
+$primary-hover-color: $main-blue-darker; // Цвет при наведении
 $secondary-color: #6c757d; // Вторичный цвет
 $secondary-hover-color: darken($secondary-color, 10%);
 $border-color: #ced4da; // Цвет границы

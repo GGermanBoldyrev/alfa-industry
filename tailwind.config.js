@@ -15,6 +15,7 @@ export default {
                 white: "var(--white)",
                 whiteDarker: "var(--white-darker)",
                 mainBlue: "var(--main-blue)",
+                mainBlueDarker: "var(--main-blue-darker)",
                 black: "var(--black)",
                 blackLighter: "var(--black-lighter)",
                 gray: "var(--gray)",

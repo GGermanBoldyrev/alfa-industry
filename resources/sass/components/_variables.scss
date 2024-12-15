@@ -2,6 +2,7 @@
 $white: #FFFFFF;
 $white-darker: #F3F4F6;
 $main-blue: #1A54C9;
+$main-blue-darker: darken($main-blue, 10%);
 $black: #222222;
 $black-lighter: #26262B;
 $gray: #75787E;
@@ -21,6 +22,7 @@ $font-size-increased-8: 22px;
   --white: #{$white};
   --white-darker: #{$white-darker};
   --main-blue: #{$main-blue};
+  --main-blue-darker: #{$main-blue-darker};
   --black: #{$black};
   --black-lighter: #{$black-lighter};
   --gray: #{$gray};
