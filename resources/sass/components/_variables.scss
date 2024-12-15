@@ -2,10 +2,12 @@
 $white: #FFFFFF;
 $white-darker: #F3F4F6;
 $main-blue: #1A54C9;
+$main-blue-darker: darken($main-blue, 10%);
 $black: #222222;
 $black-lighter: #26262B;
 $gray: #75787E;
 $gray-lighter: #9498a0;
+$gray-darker: rgb(75 85 99);
 
 /*Шрифты*/
 $font-family-base: 'Montserrat', sans-serif;
@@ -21,10 +23,12 @@ $font-size-increased-8: 22px;
   --white: #{$white};
   --white-darker: #{$white-darker};
   --main-blue: #{$main-blue};
+  --main-blue-darker: #{$main-blue-darker};
   --black: #{$black};
   --black-lighter: #{$black-lighter};
   --gray: #{$gray};
   --gray-lighter: #{$gray-lighter};
+  --gray-darker: #{$gray-darker};
 
   --font-family-base: #{$font-family-base};
   --font-size-decreased-2: #{$font-size-decreased-2};
