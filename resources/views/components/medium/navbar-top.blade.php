@@ -1,4 +1,4 @@
-<div class="flex justify-between items-center">
+<div class="flex justify-between items-center my-2">
     <nav class="min-w-[210px]">
         <a href="{{ route('home') }}">
             <img src="{{ asset('/images/main/logo.png') }}" alt="Логотип" class="w-28">

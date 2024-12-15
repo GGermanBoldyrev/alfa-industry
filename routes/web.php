@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [HomeController::class, 'index'])->name('about');
+Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/catalog', [HomeController::class, 'index'])->name('catalog');
 Route::get('/gallery', [HomeController::class, 'index'])->name('gallery');
 Route::get('/news', [HomeController::class, 'index'])->name('news');

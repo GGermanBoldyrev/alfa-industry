@@ -1,5 +1,5 @@
 <nav class="navbar-menu">
-    <ul class="flex justify-center items-center h-12 space-x-6">
+    <ul class="flex justify-center items-center my-2 space-x-6">
         <x-small.nav-item href="{{ route('home') }}" routeName="home" label="Главная" />
         <x-small.nav-item href="{{ route('about') }}" routeName="about" label="О компании" />
         <x-small.nav-item href="{{ route('catalog') }}" routeName="catalog" label="Каталог" />

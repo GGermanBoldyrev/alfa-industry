@@ -46,9 +46,31 @@ $border-hover-color: darken($border-color, 10%);
         }
     }
 
+    &.btn-primary-outlined {
+        background-color: inherit;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+
+        &:hover {
+            background-color: $primary-color;
+            color: #fff;
+            border-color: $primary-color;
+        }
+    }
+
     &.btn-sm {
         padding: 0.2rem 0.5rem;
         font-size: 0.85rem;
+    }
+
+    &.btn-xs {
+        padding: 0.35rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    &.btn-md {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
     }
 
     &.btn-lg {
