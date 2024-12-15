@@ -15,10 +15,10 @@
                                 {{ $item->title }}
                             </a>
                         </h2>
-                        <p class="text-gray-600 text-sm mt-2">
+                        <p class="text-sm mt-2 text-grayDarker">
                             Опубликовано {{ $item->created_at->format('d.m.Y') }}
                         </p>
-                        <p class="text-gray-800 mt-4">
+                        <p class="mt-4">
                             {{ Str::limit($item->content, 150, '...') }}
                         </p>
                         <a href="{{ route('news.show', $item->id) }}"
@@ -33,7 +33,7 @@
                 {{ $news->links() }} <!-- Пагинация -->
             </div>
         @else
-            <p class="text-center text-gray-600">Новостей пока нет.</p>
+            <p class="text-center">Новостей пока нет.</p>
         @endif
     </section>
 @endsection
