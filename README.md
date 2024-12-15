@@ -38,8 +38,8 @@ cd alfa-industry
 ##### 4) Настроить .env файл
 ``` 
 Установить CACHE_STORE=redis 
-Установить REDIS_CACHE_DB=0
 ```
+###### По умолчанию ключи redis будут сохраняться в таблицу с номером 1
 ##### 5) Запустить frontend 
 ```
 npm run dev
