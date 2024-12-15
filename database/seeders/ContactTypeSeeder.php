@@ -12,9 +12,18 @@ class ContactTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        ContactType::create(['name' => 'Адрес', 'is_active' => true]);
-        ContactType::create(['name' => 'Номер телефона', 'is_active' => true]);
-        ContactType::create(['name' => 'Email', 'is_active' => true]);
-        ContactType::create(['name' => 'Режим работы', 'is_active' => true]);
+        $contactTypes = [
+            ['name' => 'Адрес', 'is_active' => true],
+            ['name' => 'Номер телефона', 'is_active' => true],
+            ['name' => 'Email', 'is_active' => true],
+            ['name' => 'Режим работы', 'is_active' => true],
+        ];
+
+        foreach ($contactTypes as $contactType) {
+            ContactType::updateOrCreate(
+                ['name' => $contactType['name']],
+                $contactType
+            );
+        }
     }
 }

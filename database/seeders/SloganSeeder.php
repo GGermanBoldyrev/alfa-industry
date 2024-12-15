@@ -10,11 +10,25 @@ class SloganSeeder extends Seeder
     /**
      * Run the database seeds.
      */
+
     public function run(): void
     {
-        Slogan::create([
+        $slogans = [
+            [
                 'name' => 'Поставки промышленного оборудования мировых брендов',
-                'is_active' => true
-            ]);
+                'is_active' => true,
+            ],
+            [
+                'name' => 'Надежные комплектующие для вашего бизнеса',
+                'is_active' => false,
+            ],
+        ];
+
+        foreach ($slogans as $slogan) {
+            Slogan::updateOrCreate(
+                ['name' => $slogan['name']],
+                $slogan
+            );
+        }
     }
 }
