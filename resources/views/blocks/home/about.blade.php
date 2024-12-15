@@ -1,4 +1,4 @@
-<section class="bg-whiteDarker rounded-md px-8 py-12">
+<section class="bg-whiteDarker rounded-md px-8 py-12 shadow-xl">
     <h3 class="font-medium text-center mb-10">О нашей компании</h3>
     <x-highlight-box>
         Мы представляем полный комплекс услуг по подбору и доставке промышленного оборудования и

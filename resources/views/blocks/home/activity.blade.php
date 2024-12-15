@@ -1,4 +1,4 @@
-<section class="bg-whiteDarker rounded-md px-8 py-12">
+<section class="bg-whiteDarker rounded-md px-8 py-12 shadow-xl">
     <h3 class="font-medium text-center">Направления деятельности</h3>
     <div class="mt-10 space-y-10">
         <div>
