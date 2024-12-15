@@ -19,11 +19,8 @@ class ContactTypeSeeder extends Seeder
             ['name' => 'Режим работы', 'is_active' => true],
         ];
 
-        foreach ($contactTypes as $contactType) {
-            ContactType::updateOrCreate(
-                ['name' => $contactType['name']],
-                $contactType
-            );
+        foreach ($contactTypes as $type) {
+            ContactType::firstOrCreate(['name' => $type['name']], $type);
         }
     }
 }

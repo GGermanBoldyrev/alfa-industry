@@ -37,19 +37,20 @@ class ContactSeeder extends Seeder
         ];
 
         foreach ($contacts as $contactData) {
-            $contactType = ContactType::firstWhere('name', $contactData['type']);
+            $contactType = ContactType::firstOrCreate(
+                ['name' => $contactData['type']],
+                ['is_active' => true]
+            );
 
-            if ($contactType) {
-                Contact::updateOrCreate(
-                    [
-                        'contact_type_id' => $contactType->id,
-                        'value' => $contactData['value'],
-                    ],
-                    [
-                        'is_active' => $contactData['is_active'] ?? true,
-                    ]
-                );
-            }
+            Contact::withTrashed()->updateOrCreate(
+                [
+                    'contact_type_id' => $contactType->id,
+                    'value' => $contactData['value'],
+                ],
+                [
+                    'is_active' => $contactData['is_active'] ?? true,
+                ]
+            );
         }
     }
 }
