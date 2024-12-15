@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             SloganSeeder::class,
             ContactTypeSeeder::class,
             ContactSeeder::class,
+            NewsTypeSeeder::class,
         ]);
     }
 }
