@@ -25,7 +25,7 @@
                 <li class="mb-1"><a href="{{ route('gallery') }}">Галерея</a></li>
                 <li class="mb-1"><a href="{{ route('news.index') }}">Новости</a></li>
                 <li class="mb-1"><a href="{{ route('contacts') }}">Контакты</a></li>
-                <li class="mb-1"><a href="{{ route('order') }}">Сделать заказ</a></li>
+                <li class="mb-1"><a href="{{ route('order.index') }}">Сделать заказ</a></li>
             </ul>
         </nav>
     </li>

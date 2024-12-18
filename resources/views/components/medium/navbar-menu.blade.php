@@ -7,7 +7,7 @@
         <x-navbar-link href="{{ route('news.index') }}" routeName="news" label="Новости"/>
         <x-navbar-link href="{{ route('contacts') }}" routeName="contacts" label="Контакты"/>
 
-        <x-small.button-link class="btn-primary btn-sm mb-1" href="{{ route('order') }}">
+        <x-small.button-link class="btn-primary btn-sm mb-1" href="{{ route('order.index') }}">
             Сделать заказ
         </x-small.button-link>
     </ul>
