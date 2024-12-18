@@ -7,7 +7,7 @@
                         <img
                             src="{{ asset('storage/news_images/' . basename($item->image)) }}"
                             alt="Изображение новости"
-                            class="w-full h-auto max-w-sm object-cover rounded-md mt-2"
+                            class="w-full h-auto max-w-sm object-cover rounded-md"
                         >
                     @endif
                     <h2 class="text-xl font-semibold mt-2">
