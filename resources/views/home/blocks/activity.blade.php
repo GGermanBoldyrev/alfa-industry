@@ -1,5 +1,5 @@
-<section class="bg-whiteDarker rounded-md px-8 py-12 shadow-xl">
-    <h3 class="font-medium text-center">Направления деятельности</h3>
+<section class="rounded-md px-8 py-12 shadow-xl">
+    <h3 class="font-bold text-center">Направления деятельности</h3>
     <ul class="mt-10 space-y-10">
         <x-home.direction-item title="Поставка промышленного оборудования">
             Мы осуществляем подбор и доставку современного оборудования

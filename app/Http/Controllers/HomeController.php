@@ -8,6 +8,9 @@ class HomeController extends Controller
 {
     public function index(): View
     {
-        return view('home.index');
+        // Получаем последние 5 новостей
+        $news = \App\Models\News::orderBy('created_at', 'desc')->take(3)->get();
+
+        return view('home.index', compact('news'));
     }
 }

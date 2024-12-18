@@ -1,5 +1,5 @@
-<section class="bg-whiteDarker rounded-md px-8 py-12 shadow-xl">
-    <h3 class="font-medium text-center mb-10">О нашей компании</h3>
+<section class="rounded-md px-8 py-12 shadow-xl">
+    <h3 class="font-bold text-center mb-10">О нашей компании</h3>
     <x-highlight-box>
         Мы представляем полный комплекс услуг по подбору и доставке промышленного оборудования и
         комплектующих с Европы и стран ближнего Востока. При поступлении Вашей заявки, заказ сразу же попадает в работу,
