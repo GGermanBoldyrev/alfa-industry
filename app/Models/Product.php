@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Product extends Model
 {
@@ -19,7 +20,7 @@ class Product extends Model
         'specifications' => 'array', // Для работы с JSON-полем
     ];
 
-    public function type()
+    public function type(): BelongsTo
     {
         return $this->belongsTo(EquipmentType::class);
     }
