@@ -12,6 +12,7 @@ class OrderController extends Controller
         return view('order.index');
     }
 
+    // Пока в тестовом формате (не работает)
     public function submitForm(Request $request)
     {
         $request->validate([
