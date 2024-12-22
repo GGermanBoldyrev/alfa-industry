@@ -20,3 +20,5 @@ Route::get('/news/{news}', [NewsController::class, 'show'])->name('news.show');
 // Заказ
 Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::post('/order', [OrderController::class, 'submitForm'])->name('order.submit');
+
+// Каталог
