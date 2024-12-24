@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Services\YandexMapsService;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -24,19 +25,8 @@ class NavbarContact extends Component
         return match ($this->type) {
             'Номер телефона' => 'tel:+' . preg_replace('/[^\d+]/', '', $this->value),
             'Email' => 'mailto:' . $this->value,
+            'Адрес' => app(YandexMapsService::class)->generateUrl($this->value),
             default => '#',
-        };
-    }
-
-    /**
-     * Генерация пути к иконке.
-     */
-    public function getIcon(): string
-    {
-        return match ($this->type) {
-            'Номер телефона' => asset('icons/phone.svg'),
-            'Email' => asset('icons/mail.svg'),
-            default => asset('icons/default.svg'),
         };
     }
 

@@ -1,8 +1,8 @@
 <div class="container mx-auto">
     @include('components.medium.navbar-top')
 </div>
-@include('components.small.horizontal-line')
-<div class="container mx-auto p-4">
-    @include('components.medium.navbar-menu')
+<div class="bg-mainBlue py-1">
+    <div class="container mx-auto py-2 text-white">
+        @include('components.medium.navbar-menu')
+    </div>
 </div>
-@include('components.small.horizontal-line')
