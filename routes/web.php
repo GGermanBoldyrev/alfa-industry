@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\OrderController;
@@ -10,7 +11,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/catalog', [HomeController::class, 'index'])->name('catalog');
 Route::get('/gallery', [HomeController::class, 'index'])->name('gallery');
-Route::get('/contacts', [HomeController::class, 'index'])->name('contacts');
 Route::get('/order', [HomeController::class, 'index'])->name('order');
 
 // Новости
@@ -22,3 +22,6 @@ Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::post('/order', [OrderController::class, 'submitForm'])->name('order.submit');
 
 // Каталог
+
+// Контакты
+Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');

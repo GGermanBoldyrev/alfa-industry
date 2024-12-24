@@ -1,14 +1,17 @@
-<div class="flex justify-between items-center my-2">
-    <nav class="min-w-[210px]">
+<div class="grid grid-cols-[1fr_3fr_1fr] items-center my-2">
+    <nav>
         <a href="{{ route('home') }}">
             <img src="{{ asset('/images/main/logo.png') }}" alt="Логотип" class="w-28">
         </a>
     </nav>
-    <div class="w-80 text-center">
-        {{ $activeSloganName ?? 'Поставки промышленного оборудования мировых брендов' }}
+
+    <div class="flex justify-center">
+        <div class="text-center font-['Raleway'] text-increased4 font-medium w-1/2">
+            {{ $activeSloganName ?? 'Поставки промышленного оборудования мировых брендов' }}
+        </div>
     </div>
 
-    <nav>
+    <nav class="flex justify-center">
         <ul class="space-y-1">
             @forelse($activeContacts as $activeType => $contact)
                 @if(in_array($activeType, ['Номер телефона', 'Email']))

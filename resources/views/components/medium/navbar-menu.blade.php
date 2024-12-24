@@ -1,14 +1,28 @@
-<nav class="navbar-menu">
-    <ul class="flex justify-center items-center my-2 space-x-6">
+<nav class="navbar-menu grid grid-cols-[1fr_3fr_1fr] items-center">
+    <div></div>
+    <ul class="flex justify-center items-center text-md space-x-4">
         <x-navbar-link href="{{ route('home') }}" routeName="home" label="Главная"/>
-        <x-navbar-link href="{{ route('about') }}" routeName="about" label="О компании"/>
-        <x-navbar-link href="{{ route('catalog') }}" routeName="catalog" label="Каталог"/>
-        <x-navbar-link href="{{ route('gallery') }}" routeName="gallery" label="Галерея"/>
-        <x-navbar-link href="{{ route('news.index') }}" routeName="news" label="Новости"/>
-        <x-navbar-link href="{{ route('contacts') }}" routeName="contacts" label="Контакты"/>
+        <div class="border h-5"></div>
 
-        <x-small.button-link class="btn-primary btn-sm mb-1" href="{{ route('order.index') }}">
+        <x-navbar-link href="{{ route('about') }}" routeName="about" label="О компании"/>
+        <div class="border h-5"></div>
+
+        <x-navbar-link href="{{ route('catalog') }}" routeName="catalog" label="Каталог"/>
+        <div class="border h-5"></div>
+
+        <x-navbar-link href="{{ route('gallery') }}" routeName="gallery" label="Галерея"/>
+        <div class="border h-5"></div>
+
+        <x-navbar-link href="{{ route('news.index') }}" routeName="news" label="Новости"/>
+        <div class="border h-5"></div>
+
+        <x-navbar-link href="{{ route('contacts') }}" routeName="contacts" label="Контакты"/>
+    </ul>
+
+    <!-- Правая часть: кнопка -->
+    <div class="flex justify-center">
+        <x-small.button-link class="btn-primary-outlined-white" href="{{ route('order.index') }}">
             Сделать заказ
         </x-small.button-link>
-    </ul>
+    </div>
 </nav>

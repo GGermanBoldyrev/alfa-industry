@@ -34,7 +34,11 @@ class ContactServiceProvider extends ServiceProvider
     public function boot(ContactServiceInterface $contactService): void
     {
         View::composer(
-            ['components.large.footer', 'components.medium.navbar-top'],
+            [
+                'components.large.footer',
+                'components.medium.navbar-top',
+                'contacts.index',
+            ],
             function ($view) use ($contactService) {
                 $view->with('activeContacts', $contactService->getActiveContactsGroupedByType());
             });

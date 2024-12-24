@@ -58,6 +58,16 @@ $border-hover-color: darken($border-color, 10%);
         }
     }
 
+    &.btn-primary-outlined-white {
+        background-color: inherit;
+        color: $white;
+        border: 1px solid $white;
+
+        &:hover {
+            transform: scale(105%);
+        }
+    }
+
     &.btn-sm {
         padding: 0.2rem 0.5rem;
         font-size: 0.85rem;
