@@ -10,9 +10,9 @@ class Category extends Model
 {
     protected $fillable = ['name', 'description', 'image'];
 
-    public function brands(): HasMany
+    public function products(): HasMany
     {
-        return $this->hasMany(Brand::class);
+        return $this->hasMany(Product::class);
     }
 
     protected static function boot()

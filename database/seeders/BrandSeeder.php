@@ -14,13 +14,7 @@ class BrandSeeder extends Seeder
      */
     public function run(): void
     {
-        $categories = Category::all();
-
         // Перебираем категории и добавляем бренды
-        foreach ($categories as $category) {
-            Brand::factory()->count(6)->create([
-                'category_id' => $category->id,
-            ]);
-        }
+        Brand::factory()->count(6)->create();
     }
 }

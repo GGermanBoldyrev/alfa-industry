@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('type_id')->constrained('equipment_types')->onDelete('cascade');
+            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('brand_id')->nullable()->constrained('brands')->cascadeOnDelete();
             $table->string('name');
             $table->text('description')->nullable();
             $table->json('specifications')->nullable(); // Для хранения характеристик
