@@ -7,7 +7,7 @@
         <x-navbar-link href="{{ route('about') }}" routeName="about" label="О компании"/>
         <div class="border h-5"></div>
 
-        <x-navbar-link href="{{ route('catalog') }}" routeName="catalog" label="Каталог"/>
+        <x-navbar-link href="{{ route('catalog.index') }}" routeName="catalog" label="Каталог"/>
         <div class="border h-5"></div>
 
         <x-navbar-link href="{{ route('gallery') }}" routeName="gallery" label="Галерея"/>

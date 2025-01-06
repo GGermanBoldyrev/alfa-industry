@@ -21,7 +21,7 @@
             <ul>
                 <li class="mb-1"><a href="{{ route('home') }}">Главная</a></li>
                 <li class="mb-1"><a href="{{ route('about') }}">О компании</a></li>
-                <li class="mb-1"><a href="{{ route('catalog') }}">Каталог</a></li>
+                <li class="mb-1"><a href="{{ route('catalog.index') }}">Каталог</a></li>
                 <li class="mb-1"><a href="{{ route('gallery') }}">Галерея</a></li>
                 <li class="mb-1"><a href="{{ route('news.index') }}">Новости</a></li>
                 <li class="mb-1"><a href="{{ route('contacts') }}">Контакты</a></li>

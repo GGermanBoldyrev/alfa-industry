@@ -38,6 +38,6 @@ class OrderController extends Controller
             }
         });
 
-        return redirect()->route('order.form')->with('success', 'Ваш заказ отправлен!');
+        return redirect()->route('order.index')->with('success', 'Ваш заказ отправлен!');
     }
 }

@@ -31,6 +31,7 @@ class DatabaseSeeder extends Seeder
         // Категории
         $this->call([
             CategorySeeder::class,
+            BrandSeeder::class,
         ]);
     }
 }

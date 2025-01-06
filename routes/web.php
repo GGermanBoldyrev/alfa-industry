@@ -22,7 +22,7 @@ Route::get('/order', [OrderController::class, 'index'])->name('order.index');
 Route::post('/order', [OrderController::class, 'submitForm'])->name('order.submit');
 
 // Каталог
-Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog');
+Route::get('/catalog', [CatalogController::class, 'index'])->name('catalog.index');
 Route::get('/catalog/{slug}', [CatalogController::class, 'show'])->name('catalog.category');
 
 // Контакты
