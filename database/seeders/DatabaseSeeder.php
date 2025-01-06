@@ -27,5 +27,10 @@ class DatabaseSeeder extends Seeder
             NewsTypeSeeder::class,
             NewsSeeder::class,
         ]);
+
+        // Категории
+        $this->call([
+            CategorySeeder::class,
+        ]);
     }
 }

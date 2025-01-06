@@ -1,6 +1,6 @@
-<nav class="navbar-menu grid grid-cols-[1fr_3fr_1fr] items-center">
+<nav class="navbar-menu grid grid-cols-[1fr_3fr_1fr] items-center py-1">
     <div></div>
-    <ul class="flex justify-center items-center text-md space-x-4">
+    <ul class="flex justify-center items-center text-lg space-x-4">
         <x-navbar-link href="{{ route('home') }}" routeName="home" label="Главная"/>
         <div class="border h-5"></div>
 

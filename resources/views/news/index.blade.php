@@ -3,8 +3,8 @@
 @section('title', 'Новости')
 
 @section('content')
-    <section class="px-8 py-12 rounded-md shadow-xl">
-        <h1 class="text-center text-2xl font-bold mb-8">Новости</h1>
+    <section class="px-8 rounded-md shadow-xl">
+        <h1 class="text-center text-3xl font-bold mb-8">Новости</h1>
 
         @if ($news->count())
             <div class="space-y-6">
