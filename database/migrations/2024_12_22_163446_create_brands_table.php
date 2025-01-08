@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('name');
+            $table->string('slug')->unique();
+            $table->string('image')->nullable();
             $table->text('description')->nullable();
             $table->string('country')->nullable();
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

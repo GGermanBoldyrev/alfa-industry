@@ -2,21 +2,29 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Brand extends Model
 {
-    protected $fillable = ['category_id', 'name', 'description', 'country'];
+    use HasFactory;
 
-    public function category(): BelongsTo
+    protected $fillable = ['name', 'description', 'country'];
+
+    public function products(): HasMany
     {
-        return $this->belongsTo(Category::class);
+        return $this->hasMany(Product::class);
     }
 
-    public function equipmentTypes(): HasMany
+    protected static function boot()
     {
-        return $this->hasMany(EquipmentType::class);
+        parent::boot();
+
+        static::creating(function ($brand) {
+            $brand->slug = Str::slug($brand->name, '-');
+        });
     }
 }

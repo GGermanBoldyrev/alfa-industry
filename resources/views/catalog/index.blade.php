@@ -3,21 +3,25 @@
 @section('title', 'Каталог')
 
 @section('content')
-<div class="container mx-auto">
-    <!-- Заголовок -->
-    <h3 class="text-3xl font-bold text-center mb-12">Каталог товаров</h1>
+<div class="container mx-auto py-6">
+    <!-- Заголовок с названием категории -->
+    <h1 class="text-3xl font-semibold mb-12 text-center">Каталог</h1>
 
-    <!-- Список категорий -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        @foreach ($categories as $category)
-            <a href="{{ route('catalog.category', $category->id) }}" class="border rounded-lg p-4 shadow hover:shadow-lg">
-                @if($category->image)
-                    <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" class="w-full h-40 object-cover mb-4">
-                @endif
-                <h3 class="text-lg font-semibold mb-2">{{ $category->name }}</h3>
-                <p class="text-gray-600">{{ $category->description }}</p>
-            </a>
-        @endforeach
+    <!-- Бренды -->
+    <div class="flex justify-center w-full space-x-24">
+        <a href="{{ route('products.index') }}">
+            <div class="border p-4 rounded shadow h-[400px]  w-[400px]">
+                <img src="{{ asset('storage/') }}" alt="" class="w-full h-60 object-cover mb-4">
+                <h2 class="text-xl font-medium">Каталог товаров</h2>
+            </div>
+        </a>
+
+        <a href="{{ route('brands.index') }}">
+            <div class="border p-4 rounded shadow h-[400px] w-[400px]">
+                <img src="{{ asset('storage/') }}" alt="" class="w-full h-60 object-cover mb-4">
+                <h2 class="text-xl font-medium">Каталог брендов</h2>
+            </div>
+        </a>
     </div>
 </div>
 @endsection
