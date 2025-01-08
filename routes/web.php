@@ -32,6 +32,8 @@ Route::get('/brands', [BrandsController::class, 'index'])->name('brands.index');
 
 // Каталог товаро
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
+Route::get('/products/filter', [ProductsController::class, 'filter'])->name('products.filter');
 
 // Контакты
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
