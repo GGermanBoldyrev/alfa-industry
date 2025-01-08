@@ -10,8 +10,8 @@
         <x-navbar-link href="{{ route('catalog.index') }}" routeName="catalog" label="Каталог"/>
         <div class="border h-5"></div>
 
-        <x-navbar-link href="{{ route('gallery') }}" routeName="gallery" label="Галерея"/>
-        <div class="border h-5"></div>
+       {{-- <x-navbar-link href="{{ route('gallery') }}" routeName="gallery" label="Галерея"/>
+        <div class="border h-5"></div>--}}
 
         <x-navbar-link href="{{ route('news.index') }}" routeName="news" label="Новости"/>
         <div class="border h-5"></div>
