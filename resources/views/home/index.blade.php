@@ -10,7 +10,7 @@
         </main>
         <aside class="w-4/12">
             @include('home.blocks.news')
-            @include('home.blocks.photos')
+           {{-- @include('home.blocks.photos')--}}
         </aside>
     </div>
 @endsection

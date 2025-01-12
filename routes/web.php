@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/gallery', [HomeController::class, 'index'])->name('gallery');
+/*Route::get('/gallery', [HomeController::class, 'index'])->name('gallery');*/
 Route::get('/order', [HomeController::class, 'index'])->name('order');
 
 // Новости
@@ -34,6 +34,8 @@ Route::get('/brands', [BrandsController::class, 'index'])->name('brands.index');
 
 // Каталог товаров
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/search', [ProductsController::class, 'search'])->name('products.search');
+Route::get('/products/filter', [ProductsController::class, 'filter'])->name('products.filter');
 
 // Контакты
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
