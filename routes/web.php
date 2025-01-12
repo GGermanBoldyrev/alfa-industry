@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\BrandsController;
 use App\Http\Controllers\CatalogController;
 use App\Http\Controllers\ContactsController;
@@ -30,8 +32,23 @@ Route::get('/catalog/{slug}', [CatalogController::class, 'show'])->name('catalog
 // Каталог брендов
 Route::get('/brands', [BrandsController::class, 'index'])->name('brands.index');
 
-// Каталог товаро
+// Каталог товаров
 Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 
 // Контакты
 Route::get('/contacts', [ContactsController::class, 'index'])->name('contacts');
+
+// Админка
+Route::prefix('admin')
+    ->middleware(['auth', 'verified'])
+    ->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::resource('products', AdminProductController::class)->names('admin.products');
+        //Route::resource('users', AdminUserController::class);
+    });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+require __DIR__.'/auth.php';
